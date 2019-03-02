@@ -10,14 +10,18 @@
     <script src="assets/javascript/game.js"></script>
 </head>
 <body>
+
     <p>Press any key to Hang'em High!</p>
     <!-- playerWin will be a number zeroed every start variable incremented any time a word is guessed successfully -->
     <p>Wins: <span class="playerWin">0</span></p>
-    <p><span class="targetWord">_Word_goeshere</span></p>
+    <p>Losses: <span class="playerLoss">0</span></p>
+    <p>Word: <span class="targetWord">_</span></p>
     <!-- guessAmount will be a number incremented any time a guess goes in -->
     <!-- Could also figure out a way to reject a guess if a guess is re-entered -->
     <p>Guesses remaining: <span class="guessAmount"></span></p>
     <!-- guessLetter will be an array of letters the player adds to -->
     <p>Letters guessed: <span class="guessLetters"></span></p>
+
+
 </body>
 </html>
