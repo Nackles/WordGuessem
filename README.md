@@ -1,10 +1,10 @@
-# Game Link
+## Game Link
 https://nackles.github.io/WordGuessem/
 
-#Github Link
+## Github Link
 https://github.com/Nackles/WordGuessem
 
-# WordGuessem
+## WordGuessem
 Word Guess Game
 
 ## Status
