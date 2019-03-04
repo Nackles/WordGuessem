@@ -1,7 +1,8 @@
 # Game Link
-
+https://nackles.github.io/WordGuessem/
 
 #Github Link
+https://github.com/Nackles/WordGuessem
 
 # WordGuessem
 Word Guess Game
