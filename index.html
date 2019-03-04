@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
+
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Hang'em High</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"> -->
     <script src="assets/javascript/game.js"></script>
 </head>
+
+
+
 <body>
 
     <p>Press any key to Hang'em High!</p>
     <!-- playerWin will be a number zeroed every start variable incremented any time a word is guessed successfully -->
     <p>Wins: <span class="playerWin">0</span></p>
     <p>Losses: <span class="playerLoss">0</span></p>
-    <p>Word: <span class="targetWord">_</span></p>
+    <p>Word: <span class="emptyAnswer"></span></p>
     <!-- guessAmount will be a number incremented any time a guess goes in -->
     <!-- Could also figure out a way to reject a guess if a guess is re-entered -->
     <p>Guesses remaining: <span class="guessAmount"></span></p>
