@@ -5,19 +5,19 @@ window.onload = function () {
 
     var playerWin = 0;
     var playerLoss = 0;
-    var underScoreArray = [];
     var guessAmount = 9;
-    var guessLetters = [];
+    correctLetters = 0;
+    guessLetters = [];
     var gameOver = false;
-    var answer = [];//please computer, just accept that this is a string so you can compare it
+    answer = [];//please computer, just accept that this is a string so you can compare it
 
     //choosing computerGuess
-    var computerGuess = answerList[Math.floor(Math.random() * answerList.length)]; //randomly selecting the answer from answerList
+    computerGuess = answerList[Math.floor(Math.random() * answerList.length)]; //randomly selecting the answer from answerList
     console.log("computerGuess: " + computerGuess);//did it work
 
     //needs to be below computerGuess
-    var underScoreArray = []; //array of _ to push to the html
-    var underScoreAmount = computerGuess.length; //how many _ goes in
+    underScoreArray = []; //array of _ to push to the html
+    underScoreAmount = computerGuess.length; //how many _ goes in
 
     //creating an array with _ equal to computerGuess
     for (u = underScoreAmount; u > 0; u--) {
@@ -27,20 +27,21 @@ window.onload = function () {
     //waiting for keypress to check playerGuess against answer
     document.onkeyup = function (event) {
 
-        var playerGuess = event.key;  //variable gets keypress  
+        playerGuess = event.key;  //variable gets keypress  
         answer = computerGuess.split("");//converts computerGuess into searchable array
 
-        var firstLocation = answer.indexOf(playerGuess); //checks if playerGuess is located in answer array and saves the first location
+        firstLocation = computerGuess.indexOf(playerGuess); //checks if playerGuess is located in answer array and saves the first location
         console.log("firstLocation: " + firstLocation); //did it save the correct location?
 
 
 
-        //the first pass is ALWAYS successful. why does it fail
+        //checking if the letter exists in the array, pushes guesses to guessLetters array, changes underScoreArray to match correctly guessed letters
         if (firstLocation >= 0) {
             for (var i = 0; i < answer.length; i++) {
                 if (answer[i] === playerGuess) {
                     underScoreArray[i] = playerGuess;
                     guessLetters.push(playerGuess);
+                    correctLetters++;
                 }
 
             }
@@ -54,15 +55,15 @@ window.onload = function () {
         console.log("answer: " + answer);
         console.log("underscoreArray: " + underScoreArray);
 
-        //forcing a way to check if the strings are the same because (underScoreArray === answer) wasn't making it past the if statement
-        arrayPlayer = underScoreArray.toString();
-
-        // var arrayComputer = computerGuess.toString();
-
-        //this is just to test and see if you can reach a win state. currently: no.
-        if (underScoreArray = answer) {
+        //checking for wins or losses
+        if (correctLetters === computerGuess.length) {
             console.log("You won!");
             // document.getElementById("#playerWin") = "You won!!!";
+            //reset function/reset functionally occurs here
+        } else if (guessAmount < 1) {
+            gameOver = true;
+            console.log("You lost!");
+            //reset function/reset functionally copies here
         }
 
         //searches array for playerGuess and does something for each instance
@@ -75,7 +76,6 @@ window.onload = function () {
         //     }
         // })
 
-        console.log("guessLetters: " + guessLetters);
     }//this should attach to onkeyup
 }//this should attach to onload
 
