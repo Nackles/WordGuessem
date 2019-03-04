@@ -1,10 +1,11 @@
 window.onload = function () {
     //creating variables (some redundant)
     var answerList = ["oxygen", "javascript", "pepper", "tangerine"];
+    var playerWins = 0;
 
-
-    var playerWin = 0;
-    var playerLoss = 0;
+    //I thought this was broken before I realized I was trying to get an by giving it a class. 8)
+    document.getElementById("#playerWin").innerHTML = playerWins;
+    var playerLosses = 0;
     var guessAmount = 9;
     correctLetters = 0;
     guessLetters = [];
@@ -13,7 +14,7 @@ window.onload = function () {
 
     //choosing computerGuess
     computerGuess = answerList[Math.floor(Math.random() * answerList.length)]; //randomly selecting the answer from answerList
-    console.log("computerGuess: " + computerGuess);//did it work
+    console.log("computerGuess: " + computerGuess);//did it work(yes)
 
     //needs to be below computerGuess
     underScoreArray = []; //array of _ to push to the html
@@ -45,19 +46,19 @@ window.onload = function () {
                 }
 
             }
-        } else {
+        }
+        else {
             guessAmount--;
             guessLetters.push(playerGuess);
         }
 
-
-        //the console is showing that these two arrays ARE ===, but it's not reaching the "You won!" for some reason.
-        console.log("answer: " + answer);
-        console.log("underscoreArray: " + underScoreArray);
+        //I could have used .join to compare the arrays! That was a two hour problem I ended up using the following workaround for. Thanks to Anthony.
 
         //checking for wins or losses
         if (correctLetters === computerGuess.length) {
             console.log("You won!");
+            playerWins++;
+
             // document.getElementById("#playerWin") = "You won!!!";
             //reset function/reset functionally occurs here
         } else if (guessAmount < 1) {
