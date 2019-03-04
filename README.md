@@ -1,10 +1,13 @@
+# Game Link
+
+
+#Github Link
+
 # WordGuessem
 Word Guess Game
 
 ## Status
-Game is not currently working, but I think I've pseudocoded most of what I'll need. I'm nodding off and need to rest, so after a doctor's appointment in the morning I have the rest of the day to finish this all.
-
-It feels a little like I'm falling behind but I feel hopeful since I have this whole weekend to work and catch up and my time management with regards to my commute is improving.
+Game is unfinished but game.js is, at least, almost done. I have fallen behind in class due to time management struggles and personal problems that struck up over the weekend, but the personal problems have been resolved and I've reorganized my schedule a little to fix the time management. Rather than head to the Sounder at 3p to try and "beat traffic" (ha!) I will be staying in the classroom until 5:30p so that I can work on my homework with resources like TAs and classmates readily available so I can catch up, stay up, and hopefully get ahead. Thanks for bearing with me.
 
 ## Tricks Used
-For loops, Math.random, document.onkeyup, and eventually changing spans to string values using arrays.
+For loops, Math.random, document.onkeyup, .getElementById, and eventually changing spans to string values using arrays.
